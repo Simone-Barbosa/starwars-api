@@ -1,0 +1,35 @@
+<!-- filmes.component.html -->
+
+<div class="container-xxl pt-md-5 pb-md-8 bg-light">
+  <div *ngIf="filmes">
+    <h1 class="bd-title mt-0">Lista de Filmes</h1>
+    <p class="bd-lead">Estes são os filmes com este personagem:</p>
+
+    <button (click)="fechar()" class="btn btn-primary me-2 buttons">
+      Fechar
+    </button>
+
+    <div class="films">
+      <div class="row listFilms">
+        <span>Episodio</span>
+        <span>Titulo</span>
+        <span>Diretor</span>
+        <span>Produtores</span>
+        <span>Resumo</span>
+      </div>
+
+      <div
+        class="list-group-item border-dark-subtle"
+        *ngFor="let filme of filmes"
+      >
+        <div class="row listFilms">
+          <span>{{ filme.episode_id }}</span>
+          <span>{{ filme.title }}</span>
+          <span>{{ filme.director }}</span>
+          <span>{{ filme.producer }}</span>
+          <span>{{ filme.opening_crawl }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

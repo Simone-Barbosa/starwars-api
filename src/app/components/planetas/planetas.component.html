@@ -1,0 +1,24 @@
+<!-- planetas.component.html -->
+
+<div *ngIf="planeta" class="containerPlanet">
+  <div>
+    <button (click)="fecharPlaneta()" class="btn btn-primary me-2 buttons">
+      Fechar
+    </button>
+  </div>
+  <img [src]="photoPlanet" class="imgPlanet" />
+  <p></p>
+
+  <ul class="list-group user-list">
+    <li class="list-group-item border-dark-subtle">Nome: {{ planeta.name }}</li>
+    <li class="list-group-item border-dark-subtle">
+      Clima: {{ planeta.climate }}
+    </li>
+    <li class="list-group-item border-dark-subtle">
+      Diametro: {{ planeta.diameter }}
+    </li>
+    <li class="list-group-item border-dark-subtle">
+      População: {{ planeta.population }}
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,22 @@
+// starwars.component.scss
+
+.listCharacters {
+  display: grid;
+  grid-template-columns: 40% 10% 10% 16% 12% 12%;
+  padding: 5px;
+}
+
+.buttons {
+  width: 100px;
+  height: 35px;
+}
+
+.containerCharacters {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  background-color: aliceblue;
+}
+
+.caracter {
+  padding-right: 20px;
+}

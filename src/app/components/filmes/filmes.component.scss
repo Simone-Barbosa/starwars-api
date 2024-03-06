@@ -1,0 +1,14 @@
+// filmes.component.scss
+
+.listFilms {
+  display: grid;
+  grid-template-columns: 10% 10% 10% 10% 60%;
+  padding: 5px;
+  border-width: 1px;
+  border-color: black;
+  background-color: aliceblue;
+}
+
+.caracter {
+  background-color: aliceblue;
+}

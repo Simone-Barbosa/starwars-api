@@ -1,0 +1,67 @@
+<!-- starwars.component.html -->
+
+<app-loading [carregando]="estaCarregando"></app-loading>
+
+<h1 class="bd-title mt-0">Star Wars</h1>
+<p class="bd-lead">Consulte aqui informações dos seus personagens favoritos!</p>
+
+<div class="container-xxl pt-md-1 pb-md-4 bg-light">
+  <div *ngIf="respostaPessoas">
+    <button
+      [disabled]="!respostaPessoas.previous"
+      (click)="recuperarPessoas(respostaPessoas.previous)"
+      class="btn btn-primary me-2 buttons"
+    >
+      Voltar
+    </button>
+    <button
+      [disabled]="!respostaPessoas.next"
+      (click)="recuperarPessoas(respostaPessoas.next)"
+      class="btn btn-primary me-2 buttons"
+    >
+      Avançar
+    </button>
+
+    <div class="pt-md-3 containerCharacters">
+      <div class="caracter">
+        <div class="row listCharacters">
+          <span>Nome</span>
+          <span>Altura</span>
+          <span>Peso</span>
+          <span>Genero</span>
+          <span>Consultar</span>
+          <span></span>
+        </div>
+
+        <div
+          class="list-group-item border-dark-subtle"
+          *ngFor="let pessoa of respostaPessoas.results"
+        >
+          <div class="row listCharacters">
+            <span>{{ pessoa.name }}</span>
+            <span>{{ pessoa.height }}</span>
+            <span>{{ pessoa.mass }}</span>
+            <span>{{ pessoa.gender }}</span>
+            <button
+              (click)="recuperarPlanetas(pessoa.homeworld)"
+              class="btn btn-primary me-2 buttons"
+            >
+              Planeta
+            </button>
+            <button
+              (click)="recuperarFilmes(pessoa.films)"
+              class="btn btn-primary me-2 buttons"
+            >
+              Filmes
+            </button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <app-planetas [planeta]="respostaPlanetas"></app-planetas>
+      </div>
+    </div>
+  </div>
+
+  <app-filmes [filmes]="respostaFilmes"></app-filmes>
+</div>
